@@ -24,6 +24,8 @@ void criaVetor(vetor_tipo * vet, int tam, int id)
   erroAssert(tam>0,"Dimensao nula");
   erroAssert(tam<=MAXTAM,"Dimensao maior que permitido");
 
+  vet->v = (double*) malloc(tam * sizeof(double));
+
   // inicializa as dimensoes da vetor
   vet->tam = tam;
   // inicializa o identificador da vetor, para rastreamento

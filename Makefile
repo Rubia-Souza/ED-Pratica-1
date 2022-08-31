@@ -36,3 +36,7 @@ $(OBJ)/vet.o: $(HDRS) $(SRC)/vet.c
 	
 clean:
 	rm -f $(EXE) $(OBJS) gmon.out
+
+windows_clean:
+	del /S .\bin\*
+	del /S .\obj\*

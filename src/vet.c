@@ -39,7 +39,7 @@ void inicializaVetorNulo(vetor_tipo * vet)
 {
   int i;
   // inicializa todos os elementos do vetor com 0, por seguranca 
-  for (i=0; i<MAXTAM; i++){
+  for (i=0; i<vet->tam; i++){
     vet->v[i] = 0;
   }
 }
@@ -51,7 +51,7 @@ void inicializaVetorAleatorio(vetor_tipo * vet)
 {
   int i;
   time_t t;
-  srand((unsigned) time(&t));
+  srand(12);
   // inicializa a vetor com valores nulos, por seguranca
   inicializaVetorNulo(vet);
   // inicializa a parte alocada da vetor com valores aleatorios

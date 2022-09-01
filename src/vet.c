@@ -21,7 +21,6 @@ void criaVetor(vetor_tipo * vet, int tam, int id)
 {
   // verifica se o valor tam e valido
   erroAssert(tam>0,"Dimensao nula");
-  erroAssert(tam<=MAXTAM,"Dimensao maior que permitido");
 
   vet->v = (double*) malloc(tam * sizeof(double));
 
@@ -63,9 +62,6 @@ void imprimeVetor(vetor_tipo * vet)
 // Saida: impressao na saida padrao (stdout) 
 {
   int i;
-
-  // seguranca, mas erro não deve acontecer jamais
-  erroAssert(vet->tam<=MAXTAM,"Dimensao maior que permitido");
 
   // imprime os identificadores de posicao 
   for(i=0; i<vet->tam; i++)
@@ -176,8 +172,10 @@ void destroiVetor(vetor_tipo *a)
 // Saida: a
 {
   // apenas um aviso se a vetor for destruida mais de uma vez
-  avisoAssert((a->tam>0),"Vetor já foi destruido");
+  avisoAssert((a->v != NULL),"Vetor já foi destruido");
 
   // torna as dimensoes invalidas
   a->id = a->tam = -1;
+  a->v = NULL;
+  free(a->v);
 }

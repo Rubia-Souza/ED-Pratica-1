@@ -8,10 +8,6 @@
 #ifndef VETH
 #define VETH
 
-#ifndef MAXTAM 
-#define MAXTAM 500
-#endif
-
 typedef struct vetor{
 	double* v;
 	int tam;

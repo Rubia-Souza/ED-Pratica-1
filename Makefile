@@ -16,7 +16,7 @@ INC = include
 BIN = bin
 OBJS = $(OBJ)/vetop.o $(OBJ)/vet.o 
 HDRS = $(INC)/vet.h $(INC)/msgassert.h
-CFLAGS = -Wall -c -I$(INC)
+CFLAGS = -Wall -g -c -I$(INC)
 
 EXE = $(BIN)/vetop
 

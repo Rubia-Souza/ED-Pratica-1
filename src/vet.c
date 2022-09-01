@@ -8,7 +8,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-#include <time.h>
 #include "vet.h"
 #include "msgassert.h"
 
@@ -50,13 +49,11 @@ void inicializaVetorAleatorio(vetor_tipo * vet)
 // Saida: vet
 {
   int i;
-  time_t t;
-  srand(12);
   // inicializa a vetor com valores nulos, por seguranca
   inicializaVetorNulo(vet);
   // inicializa a parte alocada da vetor com valores aleatorios
   for (i=0; i<vet->tam; i++){
-    vet->v[i] = rand()*INITRANDOMRANGE;
+    vet->v[i] = drand48()*INITRANDOMRANGE;
   }
 }
 
